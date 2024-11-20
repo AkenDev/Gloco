@@ -1,0 +1,25 @@
+/* resources/css/app.css */
+
+@import './animate.css';
+@import './style.css';
+@import './bootstrap.min.css';
+@import './Chart.min.css';
+@import './developer.css';
+@import './dripicons.css';
+@import './Ecommerce.css';
+@import './EcommerceResponsive.css';
+@import './fontawesome.css';
+@import './ionicons.min.css';
+@import './line-awesome.min.css';
+@import './magnific-popup.css';
+@import './owl.carousel.min.css';
+@import './remixicon.css';
+@import './responsive.css';
+@import './select2.min.css';
+@import './slick-theme.css';
+@import './slick.css';
+@import './spacer.css';
+@import './swiper-bundle.min.css';
+@import './table.css';
+@import './typography.css';
+@import './variable.css';
