@@ -4,14 +4,14 @@
        <a href="index.html">
        <div class="iq-light-logo">
           <div class="iq-light-logo">
-             <img src="images/logo.gif" class="img-fluid" alt="">
+             <!--- <img src="images/logo.gif" class="img-fluid" alt="">--->
            </div>
              <div class="iq-dark-logo">
-                <img src="images/logo-dark.gif" class="img-fluid" alt="">
+                <!---<img src="images/logo-dark.gif" class="img-fluid" alt="">--->
              </div>
        </div>
        <div class="iq-dark-logo">
-          <img src="images/logo-dark.gif" class="img-fluid" alt="">
+          <!---<img src="images/logo-dark.gif" class="img-fluid" alt="">--->
        </div>
        <span>Vito</span>
        </a>
@@ -44,8 +44,9 @@
                 </ul>
              </li>
              <li><a href="" class="iq-waves-effect"><i class="ri-profile-line"></i><span>Facturas</span></a></li>
-             <li><a href="chat.html" class="iq-waves-effect"><i class="ri-message-line"></i><span>Inventario</span></a></li>
-             <li><a href="chat.html" class="iq-waves-effect"><i class="ri-message-line"></i><span>Clientes</span></a></li>                  
+             <li><a href="{{ route('inventarios.index') }}" class="iq-waves-effect"><i class="ri-message-line"></i><span>Inventario</span></a></li>
+             <li><a href="{{ route('clientes.index') }}" class="iq-waves-effect"><i class="ri-message-line"></i><span>Clientes</span></a></li>
+             <li><a href="{{ route('lote-inventarios.index') }}" class="iq-waves-effect"><i class="ri-message-line"></i><span>Lotes</span></a></li>                  
           </ul>
        </nav>
        <div class="p-3"></div>

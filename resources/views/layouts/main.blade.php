@@ -19,8 +19,14 @@
          <!-- Page Content  -->
          <div id="content-page" class="content-page">
             <div class="container-fluid">
-               <!-- Planeado: Hacer de este lugar el punto central de toda la pag -->
-               @yield('content')
+               <div class="row">
+                  <div class="col-sm-12">
+                     <div class="iq-card">
+                        <!-- Planeado: Hacer de este lugar el punto central de toda la pag -->
+                        @yield('content')
+                     </div>
+                  </div>
+               </div>
             </div>
          </div>
       </div>
@@ -60,34 +66,14 @@
       <script src="{{ Vite::asset('resources/js/jquery.min.js') }}"></script>
       <script src="{{ Vite::asset('resources/js/popper.min.js') }}"></script>
       <script src="{{ Vite::asset('resources/js/bootstrap.min.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/jquery.appear.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/countdown.min.js') }}"></script>
       <script src="{{ Vite::asset('resources/js/waypoints.min.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/jquery.counterup.min.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/wow.min.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/apexcharts.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/slick.min.js') }}"></script>
       <script src="{{ Vite::asset('resources/js/select2.min.js') }}"></script>
       <script src="{{ Vite::asset('resources/js/jquery.magnific-popup.min.js') }}"></script>
       <script src="{{ Vite::asset('resources/js/smooth-scrollbar.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/lottie.js') }}"></script>
       <script src="{{ Vite::asset('resources/js/core.js') }}"></script>
       <script src="{{ Vite::asset('resources/js/charts.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/animated.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/kelly.js') }}"></script>
       <script src="{{ Vite::asset('resources/js/morris.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/maps.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/worldLow.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/chartist/chartist.min.js') }}"></script>
-      <script async src="{{ Vite::asset('resources/js/chart-custom.js') }}"></script>
       <script src="{{ Vite::asset('resources/js/custom.js') }}"></script>
-
-      <script>
-         // Initialize WOW.js
-         document.addEventListener('DOMContentLoaded', function() {
-            new WOW().init();
-         });
-      </script>
 
    </body>
 </html>

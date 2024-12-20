@@ -9,9 +9,22 @@ class Inventario extends Model
 {
     use HasFactory;
 
-    public function lote()
+    protected $primaryKey = 'idInventario'; // Define the custom primary key
+
+    protected $fillable = [
+        'codInventario',
+        'codProveedor',
+        'descrInventario',
+        'unidadInventario',
+        'precioDolarInventario',
+        'precioCordInventario',
+    ];
+
+    public function lotes()
     {
-        return $this->belongsTo(LoteInventario::class, 'idLote');
+        return $this->belongsToMany(LoteInventario::class, 'inventario_lotes', 'idInventario', 'idLote')
+                    ->withPivot('stockPorLote') // Include stock in the pivot table
+                    ->withTimestamps(); // Track when the relationship was created/updated
     }
 
     public function detalles()

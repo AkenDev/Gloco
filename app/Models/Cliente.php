@@ -9,6 +9,18 @@ class Cliente extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'idCliente'; // Custom primary key
+
+    protected $fillable = [
+        'codigoCliente',
+        'depaCliente',
+        'nombreCliente',
+        'contactoCliente',
+        'telCliente',
+        'rucCliente',
+        'dirCliente',
+    ];
+
     public function facturas()
     {
         return $this->hasMany(Factura::class, 'idCliente');

@@ -1,0 +1,12 @@
+/* resources/css/app.css */
+/* <!-- Bootstrap CSS --> */
+@import './bootstrap.min.css';
+/* <!-- Typography CSS --> */
+@import './typography.css';
+/* <!-- Style CSS --> */
+@import './style.css';
+/* <!-- Responsive CSS --> */
+@import './responsive.css';
+
+
+@import './animate.css';

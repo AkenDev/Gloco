@@ -9,6 +9,18 @@ class Factura extends Model
 {
     use HasFactory;
 
+    protected $primaryKey = 'idFactura'; //Custom primary 
+
+    protected $fillable = [
+        'idCliente',
+        'fecha',
+        'esDolar',
+        'totalSubtotal',
+        'ivaAplicado',
+        'fechaVence',
+        'tipoFactura',
+    ];
+
     public function cliente()
     {
         return $this->belongsTo(Cliente::class, 'idCliente');

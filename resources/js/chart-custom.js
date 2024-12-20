@@ -7259,11 +7259,10 @@ var animationData = {
 		container: document.getElementById("lottie-beil"),
 		renderer: "svg",
 		loop: !0,
-		autoplay: false,
+		autoplay: !0,
 		animationData: animationData
 	};
 anim = lottie.loadAnimation(params);
-anim.play();
 var anim;
 animationData = {
 	v: "5.5.2",

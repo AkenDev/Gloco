@@ -294,15 +294,15 @@ Index Of Script
 
         /*---------------------------------------------------------------------
         Counter
-        -----------------------------------------------------------------------*/
+        -----------------------------------------------------------------------
         jQuery('.counter').counterUp({
             delay: 10,
             time: 1000
-        });
+        });*/
 
         /*---------------------------------------------------------------------
         slick
-        -----------------------------------------------------------------------*/
+        -----------------------------------------------------------------------
         
 
         jQuery('.slick-slider').slick({
@@ -477,11 +477,11 @@ Index Of Script
             }],
             nextArrow: '<a href="#" class="ri-arrow-left-s-line left"></a>',
             prevArrow: '<a href="#" class="ri-arrow-right-s-line right"></a>',
-        });
+        });*/
 
         /*---------------------------------------------------------------------
         Progress Bar
-        -----------------------------------------------------------------------*/
+        -----------------------------------------------------------------------
         jQuery('.iq-progress-bar > span').each(function() {
             let progressBar = jQuery(this);
             let width = jQuery(this).data('percent');
@@ -494,15 +494,15 @@ Index Of Script
                     progressBar.css('width', width + '%');
                 });
             }, 100);
-        });
+        });*/
 
 
         /*---------------------------------------------------------------------
         Page Menu
-        -----------------------------------------------------------------------*/
+        -----------------------------------------------------------------------
         jQuery(document).on('click', '.wrapper-menu', function() {
             jQuery(this).toggleClass('open');
-        });
+        });*/
 
         jQuery(document).on('click', ".wrapper-menu", function() {
             jQuery("body").toggleClass("sidebar-main");
@@ -510,7 +510,7 @@ Index Of Script
 
         /*---------------------------------------------------------------------
         Wow Animation
-        -----------------------------------------------------------------------*/
+        -----------------------------------------------------------------------
         let wow = new WOW({
             boxClass: 'wow',
             animateClass: 'animated',
@@ -518,44 +518,44 @@ Index Of Script
             mobile: false,
             live: true
         });
-        wow.init();
+        wow.init();*/
 
 
         /*---------------------------------------------------------------------
         Mailbox
-        -----------------------------------------------------------------------*/
+        -----------------------------------------------------------------------
         jQuery(document).on('click', 'ul.iq-email-sender-list li', function() {
             jQuery(this).next().addClass('show');
         });
 
         jQuery(document).on('click', '.email-app-details li h4', function() {
             jQuery('.email-app-details').removeClass('show');
-        });
+        });*/
 
 
         /*---------------------------------------------------------------------
         chatuser
-        -----------------------------------------------------------------------*/
+        -----------------------------------------------------------------------
         jQuery(document).on('click', '.chat-head .chat-user-profile', function() {
             jQuery(this).parent().next().toggleClass('show');
         });
         jQuery(document).on('click', '.user-profile .close-popup', function() {
             jQuery(this).parent().parent().removeClass('show');
-        });
+        });*/
 
         /*---------------------------------------------------------------------
         chatuser main
-        -----------------------------------------------------------------------*/
+        -----------------------------------------------------------------------
         jQuery(document).on('click', '.chat-search .chat-profile', function() {
             jQuery(this).parent().next().toggleClass('show');
         });
         jQuery(document).on('click', '.user-profile .close-popup', function() {
             jQuery(this).parent().parent().removeClass('show');
-        });
+        });*/
 
         /*---------------------------------------------------------------------
         Chat start
-        -----------------------------------------------------------------------*/
+        -----------------------------------------------------------------------
         jQuery(document).on('click', '#chat-start', function() {
             jQuery('.chat-data-left').toggleClass('show');
         });
@@ -567,11 +567,11 @@ Index Of Script
         });
         jQuery(document).on('click', '.sidebar-toggle', function() {
             jQuery('.chat-data-left').addClass('show');
-        });
+        });*/
 
         /*---------------------------------------------------------------------
         todo Page
-        -----------------------------------------------------------------------*/
+        -----------------------------------------------------------------------
         jQuery(document).on('click', '.todo-task-list > li > a', function() {
             jQuery('.todo-task-list li').removeClass('active');
             jQuery('.todo-task-list .sub-task').removeClass('show');
@@ -581,7 +581,7 @@ Index Of Script
         jQuery(document).on('click', '.todo-task-list > li li > a', function() {
             jQuery('.todo-task-list li li').removeClass('active');
             jQuery(this).parent().toggleClass('active');
-        });
+        });*/
 
         /*---------------------------------------------------------------------
            Search Box Toggle
