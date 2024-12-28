@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 //Main App Controllers
 use App\Http\Controllers\ClientesController;
@@ -75,19 +76,6 @@ Route::prefix('lote-inventarios')->middleware('auth')->group(function () {
     ]);
 });
 
-// Prefix to add the Facturas actions
-Route::prefix('facturas')->middleware('auth')->group(function () {
-    Route::resource('/', FacturasController::class)->parameters(['' => 'factura'])->names([
-        'index' => 'facturas.index',
-        'create' => 'facturas.create',
-        'store' => 'facturas.store',
-        'show' => 'facturas.show',
-        'edit' => 'facturas.edit',
-        'update' => 'facturas.update',
-        'destroy' => 'facturas.destroy',
-    ]);
-});
-
 // Prefix to add the Inventario actions
 Route::prefix('inventarios')->middleware('auth')->group(function () {
     Route::resource('/', InventariosController::class)->parameters(['' => 'inventario'])->names([
@@ -99,5 +87,26 @@ Route::prefix('inventarios')->middleware('auth')->group(function () {
         'destroy' => 'inventarios.destroy',
     ]);
 });
+
+// Prefix to add the Facturas actions
+Route::prefix('facturas')->middleware('auth')->group(function () {
+    // Custom route for selecting a client
+    Route::get('/select-cliente', [FacturasController::class, 'selectCliente'])->name('facturas.select-cliente');
+    
+    // Route to create a new factura
+    Route::get('/create/{idCliente}', [FacturasController::class, 'create'])->name('facturas.create');
+    
+    // Route to store a new factura
+    Route::post('/', [FacturasController::class, 'store'])->name('facturas.store');
+
+    // Route to show the summary of the created factura
+    Route::get('/{factura}', [FacturasController::class, 'show'])->name('facturas.show');
+});
+
+Route::post('/debug-factura', function (Request $request) {
+    dd($request->all());
+})->name('debug.factura');
+
+
 
 require __DIR__.'/auth.php';

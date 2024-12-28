@@ -23,11 +23,11 @@ class Factura extends Model
 
     public function cliente()
     {
-        return $this->belongsTo(Cliente::class, 'idCliente');
+        return $this->belongsTo(Cliente::class, 'idCliente', 'idCliente');
     }
-
+    
     public function detalles()
     {
-        return $this->hasMany(DetalleFactura::class, 'idFactura');
+        return $this->hasMany(DetalleFactura::class, 'idFactura', 'idFactura');
     }
 }

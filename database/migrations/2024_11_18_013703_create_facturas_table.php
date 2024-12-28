@@ -18,7 +18,7 @@ return new class extends Migration
             $table->boolean('esDolar');
             $table->decimal('totalSubtotal', 10, 2);
             $table->decimal('ivaAplicado', 10, 2);
-            $table->date('fechaVence')->index(); // Add index for filtering by due date
+            $table->date('fechaVence')->nullable()->index(); // Change this line // Add index for filtering by due date
             $table->string('tipoFactura', 50);
             $table->timestamps();
         

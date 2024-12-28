@@ -33,7 +33,7 @@
              </li>
              <li class="iq-menu-title"><i class="ri-subtract-line"></i><span>Aplicaciones</span></li>
              
-             <li><a href="todo.html" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Cotizador</span></a></li>
+             <li><a href="{{ route('facturas.select-cliente') }}" class="iq-waves-effect" aria-expanded="false"><i class="ri-chat-check-line"></i><span>Cotizador</span></a></li>
              <li>
                 <a href="#userinfo" class="iq-waves-effect collapsed" data-toggle="collapse" aria-expanded="false"><i class="ri-user-line"></i><span>User</span><i class="ri-arrow-right-s-line iq-arrow-right"></i></a>
                 <ul id="userinfo" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">

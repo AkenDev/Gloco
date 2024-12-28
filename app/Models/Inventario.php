@@ -29,6 +29,6 @@ class Inventario extends Model
 
     public function detalles()
     {
-        return $this->hasMany(DetalleFactura::class, 'codInventario');
+        return $this->hasMany(DetalleFactura::class, 'codInventario', 'codInventario');
     }
 }
