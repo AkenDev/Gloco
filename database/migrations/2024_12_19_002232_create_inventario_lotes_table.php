@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('inventario_lotes', function (Blueprint $table) {
             $table->id(); // Primary key for the pivot table
-            $table->unsignedBigInteger('idInventario'); // Foreign key to Inventarios
-            $table->unsignedBigInteger('idLote'); // Foreign key to LoteInventarios
+            $table->unsignedBigInteger('idInventario')->index(); // Foreign key to Inventarios
+            $table->unsignedBigInteger('idLote')->index(); // Foreign key to LoteInventarios
             $table->integer('stockPorLote'); // Stock for this specific lote
             $table->timestamps();
 
@@ -22,9 +22,7 @@ return new class extends Migration
             $table->foreign('idInventario')->references('idInventario')->on('inventarios')->onDelete('cascade');
             $table->foreign('idLote')->references('idLote')->on('lote_inventarios')->onDelete('cascade');
 
-            // Add indexes for faster lookups
-            $table->index('idInventario');
-            $table->index('idLote');
+            // Indexes for faster lookups
             $table->index(['idInventario', 'idLote']);
 
         });

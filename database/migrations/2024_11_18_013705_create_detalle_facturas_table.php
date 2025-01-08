@@ -23,6 +23,9 @@ return new class extends Migration
             // Foreign key constraints
             $table->foreign('idFactura')->references('idFactura')->on('facturas')->onDelete('cascade');
             $table->foreign('codInventario')->references('codInventario')->on('inventarios')->onDelete('cascade');
+
+            // Indexes for faster lookups
+            $table->index(['idFactura', 'codInventario']);
         });
     }
 

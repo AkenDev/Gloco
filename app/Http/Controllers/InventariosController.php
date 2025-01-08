@@ -122,4 +122,42 @@ class InventariosController extends Controller
         // Redirect back with success message
         return redirect()->route('inventarios.index')->with('success', 'Inventario eliminado correctamente.');
     }
+
+    //For printing the lotes for each Inventario
+    public function getLotes($id)
+    {
+        try {
+            // Buscar el Inventario por ID
+            $inventario = Inventario::findOrFail($id);
+    
+            // Obtener los lotes con la información de stock desde la tabla pivote
+            $lotes = $inventario->lotes->map(function ($lote) {
+                return [
+                    'codLote' => $lote->codLote, // Código del lote
+                    'articulos' => $lote->pivot->stockPorLote, // Stock desde la tabla pivote
+                ];
+            });
+    
+            // Responder con éxito en formato JSON
+            return response()->json([
+                'success' => true,
+                'data' => $lotes,
+            ], 200);
+        } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
+            // Manejar el caso en que el Inventario no sea encontrado
+            return response()->json([
+                'success' => false,
+                'error' => 'Inventario no encontrado.',
+            ], 404);
+        } catch (\Exception $e) {
+            // Registrar otros errores inesperados
+            \Log::error('Error obteniendo los lotes del inventario ID ' . $id . ': ' . $e->getMessage());
+    
+            // Responder con un mensaje genérico de error
+            return response()->json([
+                'success' => false,
+                'error' => 'Ocurrió un error al obtener los lotes. Por favor, inténtelo de nuevo más tarde.',
+            ], 500);
+        }
+    }
 }

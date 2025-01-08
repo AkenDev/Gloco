@@ -26,6 +26,15 @@ use App\Http\Controllers\Auth\AuthenticatedSessionController;
 */
 
 Route::middleware('auth')->group(function () {
+    $paths = ['/dashboard', '/', '/index'];
+
+    foreach ($paths as $path) {
+        Route::get($path, function () {
+            return view('home');
+        });
+    }
+
+    // Set the name for one of the routes (optional)
     Route::get('/dashboard', function () {
         return view('home');
     })->name('home');
@@ -38,7 +47,8 @@ Route::get('/login', [AuthenticatedSessionController::class, 'create'])
 
 // Define a route to handle the login form submission
 Route::post('/login', [AuthenticatedSessionController::class, 'store'])
-    ->middleware('guest'); // Apply the 'guest' middleware to ensure only unauthenticated users can access this route
+    ->middleware('guest')
+    ->name('login'); // Ensure the route name remains consistent
 
 // Define a route to handle user logout
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
@@ -78,6 +88,7 @@ Route::prefix('lote-inventarios')->middleware('auth')->group(function () {
 
 // Prefix to add the Inventario actions
 Route::prefix('inventarios')->middleware('auth')->group(function () {
+    // Resource routes for Inventarios
     Route::resource('/', InventariosController::class)->parameters(['' => 'inventario'])->names([
         'index' => 'inventarios.index',
         'create' => 'inventarios.create',
@@ -86,6 +97,7 @@ Route::prefix('inventarios')->middleware('auth')->group(function () {
         'update' => 'inventarios.update',
         'destroy' => 'inventarios.destroy',
     ]);
+
 });
 
 // Prefix to add the Facturas actions

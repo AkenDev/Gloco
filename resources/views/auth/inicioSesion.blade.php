@@ -11,18 +11,12 @@
             <p>Por favor, ingrese su usuario y contraseña para continuar.</p>
 
             {{-- Display Errors --}}
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+            <div id="error-container" class="alert alert-danger d-none">
+                <ul id="error-list"></ul>
+            </div>
 
             {{-- Login Form --}}
-            <form class="mt-4" method="POST" action="{{ route('login') }}">
+            <form id="loginForm" class="mt-4">
                 @csrf {{-- CSRF protection is mandatory --}}
                 
                 <div class="form-group">
@@ -33,7 +27,6 @@
                         class="form-control mb-0" 
                         id="email" 
                         placeholder="Correo Electrónico" 
-                        value="{{ old('email') }}" 
                         required>
                 </div>
 
@@ -54,7 +47,6 @@
                         <input type="checkbox" class="custom-control-input" id="remember" name="remember">
                         <label class="custom-control-label" for="remember">Recordarme</label>
                     </div>
-                    
 
                     {{-- Submit Button --}}
                     <button type="submit" class="btn btn-primary float-right">Iniciar sesión</button>
@@ -68,4 +60,6 @@
         </div>
     </div>
 </div>
+
+<script src="{{ Vite::asset('resources/js/login.js') }}"></script>
 @endsection

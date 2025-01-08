@@ -38,7 +38,7 @@
                            <!-- Logout Form -->
                            <form method="POST" action="{{ route('logout') }}">
                               @csrf
-                              <button type="submit" class="btn btn-primary dark-btn-primary">
+                              <button type="submit" id="logoutButton" class="btn btn-primary dark-btn-primary">
                                  Cerrar sesión<i class="ri-login-box-line ml-2"></i>
                               </button>
                            </form>

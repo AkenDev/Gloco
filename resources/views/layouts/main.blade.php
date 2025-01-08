@@ -74,6 +74,7 @@
       <script src="{{ Vite::asset('resources/js/charts.js') }}"></script>
       <script src="{{ Vite::asset('resources/js/morris.js') }}"></script>
       <script src="{{ Vite::asset('resources/js/custom.js') }}"></script>
+      <script src="{{ Vite::asset('resources/js/logout.js') }}"></script>
 
    </body>
 </html>

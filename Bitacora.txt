@@ -135,3 +135,7 @@ Final goals for this iteration:
 After successfully creating a Factura, a summary of the invoice is displayed with a button to navigate back to the dashboard.
 This implementation adheres to user feedback, enforces validations, and prepares the system for future scalability.
 This summary captures the full journey, the discussions, the solutions implemented, and the pending enhancements. If you share this in any new chat, I can immediately pick up from where we left off.
+
+//Improvements to consider:
+
+When you're ready to discuss building strong, failure-tolerant, secure, and resource-efficient software, feel free to bring it up. We can create a roadmap with essential pillars like authentication, caching, error handling, monitoring, performance optimization, and more. Let me know how you'd like to proceed with Sanctum or other improvements!

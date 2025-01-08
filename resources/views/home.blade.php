@@ -4,6 +4,6 @@
 @section('title', 'Home Page')
 
 @section('content')
-    <h1>Welcome to the Home Page</h1>
-    <p>This is the home page content.</p>
+    <h1>Bienvenido al sistema Gloco</h1>
+    <p>Este programa está hecho para manejo de Inventario, clientes y creación de Facturas</p>
 @endsection
