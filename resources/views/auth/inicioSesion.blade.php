@@ -61,5 +61,6 @@
     </div>
 </div>
 
-<script src="{{ Vite::asset('resources/js/login.js') }}"></script>
+@vite(['resources/js/login.js'])
+
 @endsection

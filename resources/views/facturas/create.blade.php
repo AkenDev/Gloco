@@ -161,5 +161,10 @@
     </div>
 </div>
 
-<script src="{{ Vite::asset('resources/js/InventariosFactura.js') }}"></script>
+@endsection
+
+@section('scripts')
+    @vite([
+        'resources/js/InventariosFactura.js',
+    ])
 @endsection

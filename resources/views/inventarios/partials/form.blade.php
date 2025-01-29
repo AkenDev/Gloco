@@ -159,4 +159,7 @@
     </div>
 </form>
 
-<script src="{{ Vite::asset('resources/js/LotesSelection.js') }}"></script>
+@section('scripts')
+    @vite(['resources/js/LotesSelection.js'])
+@endsection
+

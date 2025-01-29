@@ -101,5 +101,10 @@
     </div>
 </div>
 
-<script src="{{ Vite::asset('resources/js/getLotesForInventario.js') }}"></script>
+
+
+@endsection
+
+@section('scripts')
+    @vite(['resources/js/getLotesForInventario.js'])
 @endsection

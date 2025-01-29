@@ -11,9 +11,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const inventarios = window.inventariosData; // Get inventory data from Blade
 
     // Modal for Lotes elements
-    const loteModal = new bootstrap.Modal(document.getElementById('loteModal'));
-    const loteTableBody = document.getElementById('loteTableBody');
-    const saveLoteSelection = document.getElementById('saveLoteSelection');
+    const loteModalElement = document.getElementById('loteModal');
+    const loteTableBodyElement = document.getElementById('loteTableBody');
+    const saveLoteSelectionElement = document.getElementById('saveLoteSelection');
+
+    // Initialize Modal
+    let loteModal = null;
+    if (loteModalElement) {
+        loteModal = new bootstrap.Modal(loteModalElement);
+    } else {
+        console.error('Lote modal element is not found in the DOM.');
+    }
+
+    // Initialize Table Body
+    let loteTableBody = null;
+    if (loteTableBodyElement) {
+        loteTableBody = loteTableBodyElement;
+    } else {
+        console.error('Table Body is not found in the DOM.');
+    }
+
     let currentButton = null; // Tracks the button that opened the modal
     let selectedLotes = {}; // Store selections for each inventarioId
 
@@ -160,7 +177,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const fetchLotes = async (inventarioId) => {
-        const userToken = localStorage.getItem('userToken'); // Get the token from localStorage
+        const userToken = localStorage.getItem('userToken');
     
         if (!userToken) {
             alert('Debe iniciar sesión para ver esta información.');
@@ -171,8 +188,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const response = await fetch(`/api/inventarios/${inventarioId}/lotes`, {
                 method: 'GET',
                 headers: {
-                    'Authorization': `Bearer ${userToken}`, // Add token to headers
-                    'Accept': 'application/json', // Explicitly request JSON
+                    'Authorization': `Bearer ${userToken}`,
+                    'Accept': 'application/json',
                 },
             });
     
@@ -182,36 +199,43 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
                 throw new Error('Error al cargar los lotes.');
             }
+    
             return await response.json();
         } catch (error) {
             console.error('Error fetching lotes:', error);
-            alert('No se pueden cargar los lotes en este momento. Intente de nuevo más tarde.');
-            return null;
+            return null; // Return null to prevent undefined errors
         }
     };
 
     // Function to populate the modal with Lotes data
     const populateLoteModal = (inventarioId, buttonIndex) => {
+        if (!loteModal || !loteTableBody) {
+            console.warn('Lote modal or table body is not initialized.');
+            return;
+        }
+    
         fetchLotes(inventarioId).then((data) => {
+            if (!data || !data.data) {
+                console.error('No data received from fetchLotes.');
+                return;
+            }
+    
             if (data.data.length === 0) {
                 const row = `<tr><td colspan="2">No hay lotes disponibles.</td></tr>`;
                 loteTableBody.innerHTML = row;
+                return;
             }
-
+    
             // Clear existing rows
             loteTableBody.innerHTML = '';
-
+    
             const lotes = data.data || [];
             const currentSelections = selectedLotes[buttonIndex] || {};
-            console.log(data);
-            console.log(lotes);
-
+    
             lotes.forEach((lote) => {
                 const selectedQuantity = currentSelections[lote.codLote] || 0;
                 const row = document.createElement('tr');
-
-                
-
+    
                 row.innerHTML = `
                     <td>${lote.codLote}</td>
                     <td>${lote.articulos}</td>
@@ -226,9 +250,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 `;
                 loteTableBody.appendChild(row);
             });
-
+    
             // Open the modal
             loteModal.show();
+        }).catch((error) => {
+            console.error('Error while fetching lotes:', error);
+            alert('No se pueden cargar los lotes en este momento. Intente de nuevo más tarde.');
         });
     };
 
@@ -244,50 +271,72 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Save the selected Lotes and update the button
-    saveLoteSelection.addEventListener('click', function () {
-        const buttonIndex = currentButton.getAttribute('data-index');
-        const quantities = {};
-        let totalQuantity = 0;
+    if (saveLoteSelectionElement) {
 
-        // Gather selected quantities
-        loteTableBody.querySelectorAll('.lote-quantity').forEach((input) => {
-            const codLote = input.getAttribute('data-cod-lote');
-            const quantity = parseInt(input.value) || 0;
-
-            if (quantity > 0) {
-                quantities[codLote] = quantity;
-                totalQuantity += quantity;
+        // Add click listener inside the check
+        saveLoteSelectionElement.addEventListener('click', function () {
+            if (!currentButton) {
+                console.error('No current button found.');
+                return;
             }
+
+            const buttonIndex = currentButton.getAttribute('data-index');
+            const quantities = {};
+            let totalQuantity = 0;
+
+            // Gather selected quantities
+            loteTableBody.querySelectorAll('.lote-quantity').forEach((input) => {
+                const codLote = input.getAttribute('data-cod-lote');
+                const quantity = parseInt(input.value) || 0;
+
+                if (quantity > 0) {
+                    quantities[codLote] = quantity;
+                    totalQuantity += quantity;
+                }
+            });
+
+            // Save selections and update the button
+            selectedLotes[buttonIndex] = quantities;
+            currentButton.textContent = totalQuantity;
+            currentButton.closest('tr').querySelector('.item-cantidad').value = totalQuantity;
+
+            calculateTotals();
+            loteModal.hide();
         });
-
-        // Save selections and update the button
-        selectedLotes[buttonIndex] = quantities;
-        currentButton.textContent = totalQuantity;
-        currentButton.closest('tr').querySelector('.item-cantidad').value = totalQuantity;
-
-        calculateTotals();
-        loteModal.hide();
-    });
+    } else {
+        console.error('Save Lote Selection button is not found in the DOM.');
+    }
 
     //Set a date when tipoFactura changes
-    document.addEventListener('DOMContentLoaded', function () {
+    const observer = new MutationObserver(() => {
+    
         const tipoFacturaSelect = document.getElementById('tipoFactura');
         const fechaVenceGroup = document.getElementById('fechaVenceGroup');
-        
-        const toggleFechaVence = () => {
-            if (tipoFacturaSelect.value === 'credito') {
-                fechaVenceGroup.style.display = 'block';
-                document.getElementById('fechaVence').required = true;
-            } else {
-                fechaVenceGroup.style.display = 'none';
-                document.getElementById('fechaVence').required = false;
-            }
-        };
-
-        tipoFacturaSelect.addEventListener('change', toggleFechaVence);
-        toggleFechaVence(); // Initialize on page load
+    
+        if (tipoFacturaSelect && fechaVenceGroup) {
+    
+            // Function to show/hide the due date field
+            const toggleFechaVence = () => {
+                if (tipoFacturaSelect.value === 'credito') {
+                    fechaVenceGroup.style.display = 'block';
+                    document.getElementById('fechaVence').required = true;
+                } else {
+                    fechaVenceGroup.style.display = 'none';
+                    document.getElementById('fechaVence').required = false;
+                }
+            };
+    
+            // Attach event listener
+            tipoFacturaSelect.addEventListener('change', toggleFechaVence);
+            toggleFechaVence(); // Run immediately
+    
+            // Stop observing after successful execution
+            observer.disconnect();
+        }
     });
-
+    
+    // Start observing the document for changes
+    observer.observe(document.body, { childList: true, subtree: true });
 
 
     // Initial totals calculation

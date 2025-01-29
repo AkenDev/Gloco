@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      args:
+        - APP_ENV=development
+    environment:
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - DB_PASSWORD=Pr0d7ctD4t4Bs3-
+    volumes:
+      - .:/var/www/html
+      - ./vendor:/var/www/html/vendor
+    ports:
+      - "8000:80"

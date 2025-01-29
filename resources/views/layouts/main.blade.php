@@ -63,18 +63,19 @@
       <!-- Custom JavaScript -->
       <!-- Include the global scripts -->
       <!-- Include scripts -->
-      <script src="{{ Vite::asset('resources/js/jquery.min.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/popper.min.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/bootstrap.min.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/waypoints.min.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/select2.min.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/jquery.magnific-popup.min.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/smooth-scrollbar.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/core.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/charts.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/morris.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/custom.js') }}"></script>
-      <script src="{{ Vite::asset('resources/js/logout.js') }}"></script>
+      @vite([
+         'resources/js/vendor.js',
+         //'resources/js/waypoints.min.js',
+         //'resources/js/smooth-scrollbar.js',
+         //'resources/js/core.js',
+         //'resources/js/charts.js',
+         //'resources/js/morris.js',
+         'resources/js/custom.js',
+         'resources/js/logout.js',
+     ])
+
+      <!-- Section-specific Scripts -->
+      @yield('scripts')
 
    </body>
 </html>

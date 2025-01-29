@@ -66,5 +66,3 @@ import './chart-custom';
 
 // Custom scripts
 import './custom';
-
-console.log("All JavaScript files loaded");

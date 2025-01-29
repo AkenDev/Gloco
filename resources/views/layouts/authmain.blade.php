@@ -20,12 +20,11 @@
         <!-- Sign in END -->
       <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="{{ Vite::asset('resources/js/jquery.min.js') }}"></script>
-    <script src="{{ Vite::asset('resources/js/popper.min.js') }}"></script>
-    <script src="{{ Vite::asset('resources/js/bootstrap.min.js') }}"></script>
+    @vite(['resources/js/vendor.js',])
+
 
     <!-- Custom JavaScript -->
-    <script src="{{ Vite::asset('resources/js/custom.js') }}"></script>
+    @vite(['resources/js/custom.js'])
 
    </body>
 </html>

@@ -1,0 +1,66 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - APP_ENV=production
+    container_name: gloco-app
+    ports:
+      - "8000:80"
+    environment:
+      - APP_ENV=production
+      - APP_DEBUG=false
+      - APP_KEY=base64:HTWUAZLINrd9eUY1wW9CIycwPdyq9p8citN4g3+Bn8s=
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_DATABASE=gloco1
+      - DB_USERNAME=gloco_user_db
+      - DB_PASSWORD=Pr0d7ctD4t4Bs3-
+      - CACHE_DRIVER=redis
+      - SESSION_DRIVER=redis
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  db:
+    image: mariadb:10.4
+    container_name: gloco-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Ro07P4szW0d-
+      MYSQL_DATABASE: gloco1
+      MYSQL_USER: gloco_user_db
+      MYSQL_PASSWORD: Pr0d7ctD4t4Bs3-
+      MYSQL_LOG_QUERIES: 1
+    volumes:
+      - db-data:/var/lib/mysql
+      - ./db-init.sql:/docker-entrypoint-initdb.d/db-init.sql:ro
+      - ./custom-my.cnf:/etc/mysql/conf.d/custom-my.cnf:ro
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+
+  redis:
+    image: redis:alpine
+    container_name: gloco-redis
+    ports:
+      - "6379:6379"
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+
+volumes:
+  db-data:

@@ -84,6 +84,29 @@ App\Models\Inventario::create([
     'stockInventario' => 100,
 ]);
 
+Monitoring tools:
+
+docker exec -it gloco-app composer require laravel/telescope
+docker exec -it gloco-app php artisan telescope:install
+
+'only_allowed_ips' => ['192.168.1.100', '127.0.0.1'], // Replace with your IPs
+'middleware' => [
+    'web',
+    'auth',
+    function ($request, $next) {
+        if (in_array($request->ip(), config('telescope.only_allowed_ips'))) {
+            return $next($request);
+        }
+        abort(403);
+    },
+],
+
+docker exec -it gloco-app php artisan config:clear
+docker exec -it gloco-app php artisan config:cache
+
+Old dummy db password:
+testPassword
+
 
 Here’s an expanded summary with all the intricate details of the work we've done so far:
 

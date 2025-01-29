@@ -57,14 +57,12 @@ import './lottie';
 import './core';
 import './charts';
 //import './animated';
-import './kelly';
+//import './kelly';
 import './morris';
-import './maps';
-import './worldLow';
-import './chartist/chartist.min';
+//import './maps';
+//import './worldLow';
+//import './chartist/chartist.min';
 import './chart-custom';
 
 // Custom scripts
 import './custom';
-
-console.log("All JavaScript files loaded");

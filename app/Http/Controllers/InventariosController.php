@@ -7,6 +7,7 @@ use App\Models\Inventario;
 use App\Models\LoteInventario;
 use App\Http\Requests\StoreInventarioRequest;
 use App\Http\Requests\UpdateInventarioRequest;
+use Illuminate\Support\Facades\Cache;
 
 class InventariosController extends Controller
 {
@@ -127,36 +128,42 @@ class InventariosController extends Controller
     public function getLotes($id)
     {
         try {
-            // Buscar el Inventario por ID
-            $inventario = Inventario::findOrFail($id);
+            // Generate a cache key for the given Inventario ID
+            $cacheKey = "inventario_lotes_{$id}";
     
-            // Obtener los lotes con la información de stock desde la tabla pivote
-            $lotes = $inventario->lotes->map(function ($lote) {
-                return [
-                    'codLote' => $lote->codLote, // Código del lote
-                    'articulos' => $lote->pivot->stockPorLote, // Stock desde la tabla pivote
-                ];
+            // Retrieve data from cache or fetch from the database and cache it for 10 minutes
+            $lotes = Cache::remember($cacheKey, now()->addMinutes(10), function () use ($id) {
+                // Find the Inventario by ID or throw an exception if not found
+                $inventario = Inventario::findOrFail($id);
+    
+                // Retrieve the lotes and their stock information from the pivot table
+                return $inventario->lotes->map(function ($lote) {
+                    return [
+                        'codLote' => $lote->codLote, // Lote code
+                        'articulos' => $lote->pivot->stockPorLote, // Stock from the pivot table
+                    ];
+                });
             });
     
-            // Responder con éxito en formato JSON
+            // Return a successful JSON response with the lotes data
             return response()->json([
                 'success' => true,
                 'data' => $lotes,
             ], 200);
         } catch (\Illuminate\Database\Eloquent\ModelNotFoundException $e) {
-            // Manejar el caso en que el Inventario no sea encontrado
+            // Handle the case where the Inventario is not found
             return response()->json([
                 'success' => false,
-                'error' => 'Inventario no encontrado.',
+                'error' => 'Inventario not found.',
             ], 404);
         } catch (\Exception $e) {
-            // Registrar otros errores inesperados
-            \Log::error('Error obteniendo los lotes del inventario ID ' . $id . ': ' . $e->getMessage());
+            // Log any unexpected errors
+            \Log::error('Error fetching lotes for Inventario ID ' . $id . ': ' . $e->getMessage());
     
-            // Responder con un mensaje genérico de error
+            // Return a generic error message
             return response()->json([
                 'success' => false,
-                'error' => 'Ocurrió un error al obtener los lotes. Por favor, inténtelo de nuevo más tarde.',
+                'error' => 'An error occurred while fetching the lotes. Please try again later.',
             ], 500);
         }
     }
