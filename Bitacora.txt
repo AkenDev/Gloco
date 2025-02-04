@@ -162,3 +162,14 @@ This summary captures the full journey, the discussions, the solutions implement
 //Improvements to consider:
 
 When you're ready to discuss building strong, failure-tolerant, secure, and resource-efficient software, feel free to bring it up. We can create a roadmap with essential pillars like authentication, caching, error handling, monitoring, performance optimization, and more. Let me know how you'd like to proceed with Sanctum or other improvements!
+
+
+Terraform:
+
+This command helped me to have again connectio to GKE:
+
+
+gcloud container clusters get-credentials my-gke-cluster --zone=us-central1-a
+
+
+Google Cloud SDK (gcloud): When you configure 'gcloud container clusters get-credentials', it connects to this endpoint.

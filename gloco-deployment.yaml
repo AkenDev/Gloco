@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gloco-app
+spec:
+  replicas: 2  # Adjust as needed
+  selector:
+    matchLabels:
+      app: gloco-app
+  template:
+    metadata:
+      labels:
+        app: gloco-app
+    spec:
+      containers:
+      - name: gloco-app
+        image: gcr.io/gloco-446321/gloco-app:v1
+        ports:
+        - containerPort: 80
+        envFrom:
+        - configMapRef:
+            name: gloco-config
+        - secretRef:
+            name: gloco-secrets
+        volumeMounts:
+        - name: storage
+          mountPath: /var/www/storage
+      volumes:
+      - name: storage
+        emptyDir: {}
