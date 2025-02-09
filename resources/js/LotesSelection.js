@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
         document.querySelectorAll('.lote-select').forEach(select => {
             const currentLoteId = parseInt(select.value) || null;
-            select.innerHTML = '<option value="">Selecciones un lote...</option>';
+            select.innerHTML = '<option value="">Seleccione un lote...</option>';
             lotesData.forEach(lote => {
                 const isAssignedElsewhere = assignedLoteIds.includes(lote.idLote) && lote.idLote !== currentLoteId;
                 if (!isAssignedElsewhere) {
