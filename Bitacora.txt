@@ -41,7 +41,7 @@ Database Indexing:
 
 
 
-Tinker commands: testing2
+Tinker commands: testing I don't know
 
 App\Models\User::create([
     'name' => 'Admin User',
