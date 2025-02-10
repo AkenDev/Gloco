@@ -41,7 +41,7 @@ Database Indexing:
 
 
 
-Tinker commands: Testing one more time he he new again  kjghk
+Tinker commands: Testing one more time he he new again  sdfasdfas
 
 App\Models\User::create([
     'name' => 'Admin User',
