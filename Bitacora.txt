@@ -41,7 +41,7 @@ Database Indexing:
 
 
 
-Tinker commands: Testing one more time he he new again wft???
+Tinker commands: Testing one more time he he new again wft?????
 
 App\Models\User::create([
     'name' => 'Admin User',
