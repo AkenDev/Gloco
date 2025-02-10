@@ -173,3 +173,49 @@ gcloud container clusters get-credentials my-gke-cluster --zone=us-central1-a
 
 
 Google Cloud SDK (gcloud): When you configure 'gcloud container clusters get-credentials', it connects to this endpoint.
+
+
+🔹 Recommended Branching Strategy
+I recommend using GitFlow with slight modifications to suit your pre-production stage.
+
+🌱 Main Branches
+Branch	Purpose	Who Works Here?	Deployment Target
+main (or prod)	Stable, production-ready code	✅ Lead developers ✅ Approved PRs only	Production
+preprod	Code prepared for release testing	✅ DevOps ✅ QA Team ✅ Feature-complete merges	Pre-production
+develop	Active development branch	✅ All developers	Development environment
+🌿 Supporting Branches
+Branch	Purpose	Who Works Here?	Merges Into
+feature/xyz	Work on new features	Developers	develop
+hotfix/xyz	Urgent production fixes	Senior Devs / Leads	main, then preprod, then develop
+bugfix/xyz	Non-urgent bug fixes	Developers	develop
+release/x.y.z	Final prep before release	DevOps / QA	preprod, then main
+🔹 How It Works in a Real Workflow
+1️⃣ Feature Development
+Developers create a branch from develop:
+sh
+Copiar
+Editar
+git checkout -b feature/new-login-page develop
+Work on the feature, then merge into develop via Pull Request (PR).
+2️⃣ Testing & Pre-Production
+After multiple features are merged into develop, the pre-release version is prepared in a release branch:
+sh
+Copiar
+Editar
+git checkout -b release/1.0.0 develop
+The release/1.0.0 branch is deployed to pre-production for testing.
+Once approved, it is merged into main (prod) and preprod:
+sh
+Copiar
+Editar
+git checkout main
+git merge release/1.0.0
+git checkout preprod
+git merge release/1.0.0
+3️⃣ Urgent Fixes in Production (Hotfix)
+If there’s a critical bug in production, create a hotfix branch from main:
+sh
+Copiar
+Editar
+git checkout -b hotfix/fix-login-issue main
+Fix the issue and merge it into main, preprod, and develop.
