@@ -219,3 +219,31 @@ Copiar
 Editar
 git checkout -b hotfix/fix-login-issue main
 Fix the issue and merge it into main, preprod, and develop.
+
+
+
+
+Kubernetes commands:
+
+• kubectl get pods >> to see the pods
+• kubectl get pods -o wide >> to do the same but with more info
+
+• gcloud container clusters list >> to get the cluster information 
+
+I should print something like:
+
+NAME: gloco-gke-cluster
+LOCATION: us-central1-a
+MASTER_VERSION: 1.31.4-gke.1372000
+MASTER_IP: 34.27.98.131
+MACHINE_TYPE: e2-medium
+NODE_VERSION: 1.31.4-gke.1372000
+NUM_NODES: 2
+STATUS: RUNNING
+
+• gcloud container clusters describe gloco-gke-cluster --zone=us-central1-a >> to describe this container
+
+• kubectl get deployments >> To list the current deployments I have
+• kubectl get deployments -o wide >> To do the same but print more information.
+
+

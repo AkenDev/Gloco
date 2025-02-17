@@ -1,0 +1,806 @@
+.frame {
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .frame .overlap-group-wrapper {
+    background-color: #ffffff;
+    width: 2550px;
+    height: 3300px;
+  }
+  
+  .frame .overlap-group {
+    position: relative;
+    height: 3300px;
+    background-color: #ffffff;
+  }
+  
+  .frame .overlap {
+    position: absolute;
+    width: 2295px;
+    height: 286px;
+    top: 401px;
+    left: 122px;
+  }
+  
+  .frame .div {
+    position: absolute;
+    width: 2295px;
+    height: 286px;
+    top: 0;
+    left: 0;
+  }
+  
+  .frame .rectangle {
+    position: absolute;
+    width: 2295px;
+    height: 228px;
+    top: 58px;
+    left: 0;
+    background-color: #ffffff;
+    border-radius: 25px;
+    border: 3px solid;
+    border-color: #000000;
+  }
+  
+  .frame .departamento {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper {
+    position: absolute;
+    top: 71px;
+    left: 22px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-2 {
+    position: absolute;
+    top: 0;
+    left: 950px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-3 {
+    position: absolute;
+    top: 0;
+    left: 1730px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-4 {
+    position: absolute;
+    top: 141px;
+    left: 22px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-5 {
+    position: absolute;
+    top: 212px;
+    left: 22px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-6 {
+    position: absolute;
+    top: 71px;
+    left: 1468px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-7 {
+    position: absolute;
+    top: 212px;
+    left: 1468px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .line {
+    position: absolute;
+    width: 1233px;
+    height: 1px;
+    top: 117px;
+    left: 234px;
+    object-fit: cover;
+  }
+  
+  .frame .img {
+    position: absolute;
+    width: 692px;
+    height: 1px;
+    top: 117px;
+    left: 1582px;
+    object-fit: cover;
+  }
+  
+  .frame .line-2 {
+    position: absolute;
+    width: 1977px;
+    height: 1px;
+    top: 187px;
+    left: 298px;
+    object-fit: cover;
+  }
+  
+  .frame .line-3 {
+    position: absolute;
+    width: 1166px;
+    height: 1px;
+    top: 258px;
+    left: 302px;
+    object-fit: cover;
+  }
+  
+  .frame .line-4 {
+    position: absolute;
+    width: 541px;
+    height: 1px;
+    top: 258px;
+    left: 1734px;
+    object-fit: cover;
+  }
+  
+  .frame .line-5 {
+    position: absolute;
+    width: 546px;
+    height: 1px;
+    top: 46px;
+    left: 404px;
+    object-fit: cover;
+  }
+  
+  .frame .line-6 {
+    position: absolute;
+    width: 391px;
+    height: 1px;
+    top: 46px;
+    left: 1902px;
+    object-fit: cover;
+  }
+  
+  .frame .line-7 {
+    position: absolute;
+    width: 449px;
+    height: 1px;
+    top: 46px;
+    left: 1280px;
+    object-fit: cover;
+  }
+  
+  .frame .overlap-2 {
+    position: absolute;
+    width: 2786px;
+    height: 2357px;
+    top: 693px;
+    left: -370px;
+  }
+  
+  .frame .rectangle-2 {
+    position: absolute;
+    width: 2292px;
+    height: 2357px;
+    top: 0;
+    left: 494px;
+    background-color: #ffffff;
+    border-radius: 25px;
+    border: 3px solid;
+    border-color: #000000;
+  }
+  
+  .frame .nuevo-logo-con {
+    width: 1602px;
+    height: 565px;
+    top: 806px;
+    left: 794px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .frame .rectangle-3 {
+    position: absolute;
+    width: 216px;
+    height: 218px;
+    top: 2063px;
+    left: 2283px;
+    background-color: #000000;
+  }
+  
+  .frame .rectangle-4 {
+    position: absolute;
+    width: 1789px;
+    height: 70px;
+    top: 2211px;
+    left: 494px;
+    background-color: #000000;
+  }
+  
+  .frame .vector {
+    position: absolute;
+    width: 2290px;
+    height: 69px;
+    top: 1px;
+    left: 496px;
+  }
+  
+  .frame .text-wrapper-8 {
+    position: absolute;
+    top: 12px;
+    left: 514px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-9 {
+    position: absolute;
+    top: 2083px;
+    left: 523px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .SUB-TOTAL {
+    position: absolute;
+    top: 2062px;
+    left: 2308px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .cheque-a-nombre-de {
+    position: absolute;
+    width: 1784px;
+    top: 2157px;
+    left: 523px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .span {
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+  }
+  
+  .frame .text-wrapper-10 {
+    font-weight: 700;
+  }
+  
+  .frame .text-wrapper-11 {
+    position: absolute;
+    top: 2157px;
+    left: 2308px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .CUENTAS-BAC-u {
+    position: absolute;
+    width: 1803px;
+    top: 2224px;
+    left: 504px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-12 {
+    position: absolute;
+    top: 12px;
+    left: 669px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-13 {
+    position: absolute;
+    top: 12px;
+    left: 866px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-14 {
+    position: absolute;
+    top: 12px;
+    left: 1498px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-15 {
+    position: absolute;
+    top: 12px;
+    left: 2175px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-16 {
+    position: absolute;
+    top: 12px;
+    left: 2390px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-17 {
+    position: absolute;
+    top: 12px;
+    left: 2531px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .line-8 {
+    position: absolute;
+    width: 2292px;
+    height: 3px;
+    top: 2140px;
+    left: 494px;
+  }
+  
+  .frame .line-9 {
+    position: absolute;
+    width: 2292px;
+    height: 3px;
+    top: 2062px;
+    left: 494px;
+  }
+  
+  .frame .line-10 {
+    position: absolute;
+    width: 2292px;
+    height: 3px;
+    top: 2208px;
+    left: 494px;
+  }
+  
+  .frame .line-11 {
+    position: absolute;
+    width: 2292px;
+    height: 3px;
+    top: 2278px;
+    left: 494px;
+  }
+  
+  .frame .p {
+    position: absolute;
+    top: 2302px;
+    left: 1029px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 27px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-18 {
+    position: absolute;
+    top: 2224px;
+    left: 2309px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .line-12 {
+    position: absolute;
+    width: 3px;
+    height: 2212px;
+    top: 69px;
+    left: 2499px;
+  }
+  
+  .frame .line-13 {
+    position: absolute;
+    width: 3px;
+    height: 1994px;
+    top: 69px;
+    left: 2340px;
+  }
+  
+  .frame .line-14 {
+    position: absolute;
+    width: 3px;
+    height: 1994px;
+    top: 69px;
+    left: 2133px;
+  }
+  
+  .frame .line-15 {
+    position: absolute;
+    width: 3px;
+    height: 1994px;
+    top: 69px;
+    left: 974px;
+  }
+  
+  .frame .line-16 {
+    position: absolute;
+    width: 3px;
+    height: 1994px;
+    top: 69px;
+    left: 837px;
+  }
+  
+  .frame .line-17 {
+    position: absolute;
+    width: 3px;
+    height: 1996px;
+    top: 69px;
+    left: 642px;
+  }
+  
+  .frame .text-wrapper-19 {
+    position: absolute;
+    width: 928px;
+    top: 968px;
+    left: 0;
+    transform: rotate(-90.00deg);
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 32px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .overlap-3 {
+    position: absolute;
+    width: 805px;
+    height: 117px;
+    top: 245px;
+    left: 872px;
+  }
+  
+  .frame .overlap-4 {
+    position: absolute;
+    width: 805px;
+    height: 90px;
+    top: 0;
+    left: 0;
+  }
+  
+  .frame .text-wrapper-20 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .mensaje {
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    top: 36px;
+    left: 147px;
+    object-fit: cover;
+  }
+  
+  .frame .text-wrapper-21 {
+    position: absolute;
+    top: 39px;
+    left: 218px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-22 {
+    position: absolute;
+    top: 78px;
+    left: 227px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-23 {
+    position: absolute;
+    top: 206px;
+    left: 930px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-24 {
+    position: absolute;
+    width: 617px;
+    top: 109px;
+    left: 998px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-25 {
+    position: absolute;
+    top: 124px;
+    left: 2111px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 64px;
+    text-align: right;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-26 {
+    position: absolute;
+    top: 167px;
+    left: 881px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .rectangle-wrapper {
+    position: absolute;
+    width: 38px;
+    height: 39px;
+    top: 226px;
+    left: 2378px;
+    background-color: #d9d9d9;
+  }
+  
+  .frame .rectangle-5 {
+    height: 39px;
+    background-color: #d9d9d9;
+  }
+  
+  .frame .rectangle-6 {
+    position: absolute;
+    width: 38px;
+    height: 39px;
+    top: 277px;
+    left: 2378px;
+    background-color: #d9d9d9;
+  }
+  
+  .frame .text-wrapper-27 {
+    position: absolute;
+    top: 225px;
+    left: 2174px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-28 {
+    position: absolute;
+    top: 280px;
+    left: 2197px;
+    font-family: "Inter", Helvetica;
+    font-weight: 400;
+    color: #000000;
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .nuevo-logo-con-2 {
+    width: 618px;
+    height: 218px;
+    top: 110px;
+    left: 144px;
+    position: absolute;
+    object-fit: cover;
+  }
+  
+  .frame .text-wrapper-29 {
+    position: absolute;
+    top: 3051px;
+    left: 469px;
+    font-family: "Inter", Helvetica;
+    font-weight: 300;
+    color: #000000;
+    font-size: 28px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-30 {
+    position: absolute;
+    top: 3216px;
+    left: 312px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 27px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-31 {
+    position: absolute;
+    top: 3223px;
+    left: 2075px;
+    font-family: "Inter", Helvetica;
+    font-weight: 700;
+    color: #000000;
+    font-size: 27px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .text-wrapper-32 {
+    position: absolute;
+    top: 3223px;
+    left: 1063px;
+    font-family: "Inter", Helvetica;
+    font-weight: 600;
+    color: #000000;
+    font-size: 27px;
+    text-align: center;
+    letter-spacing: 0;
+    line-height: normal;
+  }
+  
+  .frame .line-18 {
+    position: absolute;
+    width: 597px;
+    height: 5px;
+    top: 3198px;
+    left: 124px;
+  }
+  
+  .frame .line-19 {
+    position: absolute;
+    width: 597px;
+    height: 5px;
+    top: 3198px;
+    left: 1805px;
+  }
+  
+  .frame .pasador-de-ubicacion {
+    position: absolute;
+    width: 53px;
+    height: 53px;
+    top: 161px;
+    left: 828px;
+    object-fit: cover;
+  }
+  
+  .frame .llamar {
+    position: absolute;
+    width: 53px;
+    height: 53px;
+    top: 238px;
+    left: 819px;
+    object-fit: cover;
+  }
+  
