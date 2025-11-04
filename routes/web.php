@@ -113,6 +113,9 @@ Route::prefix('facturas')->middleware('auth')->group(function () {
 
     // Route to show the summary of the created factura
     Route::get('/{factura}', [FacturasController::class, 'show'])->name('facturas.show');
+
+    // Route to generate and download the PDF invoice
+    Route::get('/{factura}/pdf', [FacturasController::class, 'descargarFactura'])->name('facturas.pdf');
 });
 
 Route::post('/debug-factura', function (Request $request) {

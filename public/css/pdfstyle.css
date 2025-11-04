@@ -4,11 +4,6 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
 }
 
 .container {
@@ -19,6 +14,8 @@ html, body {
   overflow: hidden;
   width: 100%;
   height: 100%;
+  transform: scale(1.25); /* Adjust scaling factor */
+  transform-origin: 0 0;
 }
 
 .container .facturap {
@@ -218,6 +215,7 @@ html, body {
   height: 12px;
   left: 162px;
   background-color: #d9d9d9;
+  font-family: "Inter", Helvetica;
 }
 
 .container .checkbox-contado {
@@ -227,6 +225,7 @@ html, body {
   height: 12px;
   left: 162px;
   background-color: #d9d9d9;
+  font-family: "Inter", Helvetica;
 }
 
 .container .text-wrapper-7 {
@@ -606,12 +605,22 @@ html, body {
   object-fit: cover;
 }
 
-.container .th-CANT {
-  width: 40px;
+.container .invoice-table {
+  position: absolute;
   top: 2px;
-  left: 21px;
-  position: absolute;
+  width: 749px;
   font-family: "Inter", Helvetica;
+  left: 5px;
+}
+
+.container .invoice-table th,
+.container .invoice-table td {
+  padding: 3px; /* Adds spacing inside cells */
+  text-align: center; /* Centers text horizontally */
+  vertical-align: middle; /* Centers text vertically */
+}
+
+.container .invoice-table .invoice-table-head {
   font-weight: 700;
   color: #ffffff;
   font-size: 12px;
@@ -620,88 +629,9 @@ html, body {
   white-space: nowrap;
 }
 
-.container .th-c-DIGO {
-  width: 45px;
-  top: 4px;
-  left: 81px;
-  position: absolute;
-  font-family: "Inter", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.container .th-u-m {
-  width: 25px;
-  top: 4px;
-  left: 142px;
-  position: absolute;
-  font-family: "Inter", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.container .th-DESCRIPCI-n {
-  width: 97px;
-  top: 2px;
-  left: 317px;
-  position: absolute;
-  font-family: "Inter", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.container .th-p-UNIT {
-  width: 40px;
-  top: 2px;
-  left: 502px;
-  position: absolute;
-  font-family: "Inter", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.container .th-IVA {
-  width: 27px;
-  top: 2px;
-  left: 599px;
-  position: absolute;
-  font-family: "Inter", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.container .th-SUB-TOTAL {
-  position: absolute;
-  width: 77px;
-  top: 4px;
-  left: 671px;
-  font-family: "Inter", Helvetica;
-  font-weight: 700;
-  color: #ffffff;
-  font-size: 12px;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
+.container .invoice-table .invoice-table-body {
+  color: #000000;
+  font-size: 10px;
 }
 
 .container .text-wrapper-21 {

@@ -11,6 +11,9 @@ use App\Http\Requests\StoreFacturaRequest;
 use App\Http\Requests\UpdateFacturaRequest;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\ValidationException;
+use Spatie\Browsershot\Browsershot;
+use App\Helpers\NumberToWords;
+
 
 class FacturasController extends Controller
 {   
@@ -143,6 +146,24 @@ class FacturasController extends Controller
 
         // Return the view with the invoice data
         return view('facturas.show', compact('factura', 'subtotal', 'totalIva', 'total'));
+    }
+
+    public function descargarFactura($id)
+    {
+        $factura = Factura::with('cliente', 'detalles.inventario')->findOrFail($id);
+        $montoLetras = NumberToWords::convertir($factura->totalSubtotal + $factura->ivaAplicado); // Pending function
+
+        $html = view('facturas.invoice', compact('factura', 'montoLetras'))->render();
+
+
+
+        Browsershot::html($html)
+            ->format('Letter') // Similar to setPaper
+            ->margins(0, 0, 0, 0) // Top, Right, Bottom, Left
+            ->setOption('printBackground', true) // Ensures background colors/images
+            ->save(storage_path("app/public/Factura-{$factura->idFactura}.pdf"));
+
+        return response()->file(storage_path("app/public/Factura-{$factura->idFactura}.pdf"));
     }
 
 }

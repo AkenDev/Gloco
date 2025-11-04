@@ -1,40 +1,21 @@
-html, body {
-  width: 816px;
-  height: 1056px;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
 .container {
+  background-color: #ffffff;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
-  overflow: hidden;
   width: 100%;
-  height: 100%;
 }
 
-.container .facturap {
+.container .overlap-wrapper {
   background-color: #ffffff;
-  overflow-x: hidden;
-  width: 816px;
-  height: 1056px;
-  position: relative;
+  width: 612px;
+  height: 792px;
 }
 
 .container .overlap {
-  position: absolute;
-  width: 817px;
-  height: 947px;
-  top: 0;
-  left: 0;
+  position: relative;
+  height: 793px;
+  top: -1px;
 }
 
 .container .building-blocks {
@@ -46,70 +27,63 @@ html, body {
   background-color: #ffffff;
 }
 
-.container .logo {
+.container .footer {
   position: absolute;
-  width: 214px;
-  height: 116px;
-  top: 0;
+  width: 530px;
+  height: 80px;
+  top: 713px;
+  left: 41px;
+  background-color: transparent;
+}
+
+.container .overlap-group {
+  position: absolute;
+  width: 130px;
+  height: 8px;
+  top: 38px;
   left: 0;
-}
-
-.container .nuevo-logo-con {
-  width: 133px;
-  height: 47px;
-  top: 35px;
-  left: 40px;
-  position: absolute;
-  object-fit: cover;
-}
-
-.container .encabezado {
-  position: absolute;
-  width: 388px;
-  height: 122px;
-  top: 1px;
-  left: 214px;
 }
 
 .container .text-wrapper {
   position: absolute;
-  width: 235px;
-  top: 17px;
-  left: 88px;
+  width: 92px;
+  top: 1px;
+  left: 19px;
   font-family: "Inter", Helvetica;
-  font-weight: 400;
+  font-weight: 700;
   color: #000000;
-  font-size: 16px;
+  font-size: 10px;
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
 }
 
-.container .p {
+.container .img {
   position: absolute;
-  width: 325px;
-  top: 35px;
-  left: 42px;
-  font-family: "Inter", Helvetica;
-  font-weight: 400;
-  color: #000000;
-  font-size: 12px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
+  width: 130px;
+  height: 2px;
+  top: 0;
+  left: 0;
+}
+
+.container .div {
+  position: absolute;
+  width: 130px;
+  height: 8px;
+  top: 38px;
+  left: 400px;
 }
 
 .container .text-wrapper-2 {
   position: absolute;
-  width: 285px;
-  top: 49px;
-  left: 62px;
+  width: 44px;
+  top: 1px;
+  left: 43px;
   font-family: "Inter", Helvetica;
-  font-weight: 400;
+  font-weight: 700;
   color: #000000;
-  font-size: 12px;
+  font-size: 10px;
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
@@ -118,14 +92,110 @@ html, body {
 
 .container .text-wrapper-3 {
   position: absolute;
-  width: 322px;
-  top: 64px;
-  left: 42px;
+  width: 106px;
+  top: 49px;
+  left: 212px;
+  font-family: "Inter", Helvetica;
+  font-weight: 600;
+  color: #000000;
+  font-size: 8px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.container .p {
+  position: absolute;
+  width: 399px;
+  top: -1px;
+  left: 78px;
+  font-family: "Inter", Helvetica;
+  font-weight: 300;
+  color: #000000;
+  font-size: 7px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.container .logo {
+  position: absolute;
+  width: 161px;
+  height: 87px;
+  top: 0;
+  left: 0;
+}
+
+.container .nuevo-logo-con {
+  width: 133px;
+  height: 47px;
+  top: 18px;
+  left: 20px;
+  position: absolute;
+  object-fit: cover;
+}
+
+.container .encabezado {
+  position: absolute;
+  width: 293px;
+  height: 91px;
+  top: 1px;
+  left: 161px;
+}
+
+.container .text-wrapper-4 {
+  position: absolute;
+  width: 183px;
+  top: 10px;
+  left: 62px;
   font-family: "Inter", Helvetica;
   font-weight: 400;
   color: #000000;
-  font-size: 12px;
-  text-align: center;
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.container .text-wrapper-5 {
+  position: absolute;
+  width: 254px;
+  top: 24px;
+  left: 26px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.container .text-wrapper-6 {
+  position: absolute;
+  width: 224px;
+  top: 35px;
+  left: 41px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
+  letter-spacing: 0;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.container .text-wrapper-7 {
+  position: absolute;
+  width: 252px;
+  top: 47px;
+  left: 26px;
+  font-family: "Inter", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 10px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
@@ -133,32 +203,31 @@ html, body {
 
 .container .pasador-de-ubicacion {
   position: absolute;
-  width: 15px;
-  height: 15px;
-  top: 36px;
-  left: 24px;
+  width: 12px;
+  height: 12px;
+  top: 25px;
+  left: 12px;
   object-fit: cover;
 }
 
 .container .llamar {
   position: absolute;
-  width: 14px;
-  height: 14px;
-  top: 65px;
-  left: 28px;
+  width: 11px;
+  height: 11px;
+  top: 48px;
+  left: 15px;
   object-fit: cover;
 }
 
-.container .text-wrapper-4 {
+.container .text-wrapper-8 {
   position: absolute;
-  width: 156px;
-  top: 78px;
-  left: 127px;
+  width: 121px;
+  top: 58px;
+  left: 93px;
   font-family: "Inter", Helvetica;
   font-weight: 400;
   color: #000000;
-  font-size: 12px;
-  text-align: center;
+  font-size: 10px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
@@ -166,23 +235,22 @@ html, body {
 
 .container .mensaje {
   position: absolute;
-  width: 16px;
-  height: 16px;
-  top: 80px;
-  left: 109px;
+  width: 12px;
+  height: 12px;
+  top: 60px;
+  left: 78px;
   object-fit: cover;
 }
 
-.container .text-wrapper-5 {
-  width: 151px;
-  top: 93px;
-  left: 129px;
-  text-align: center;
+.container .text-wrapper-9 {
+  width: 118px;
+  top: 70px;
+  left: 94px;
+  font-size: 10px;
   position: absolute;
   font-family: "Inter", Helvetica;
   font-weight: 400;
   color: #000000;
-  font-size: 12px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
@@ -190,76 +258,76 @@ html, body {
 
 .container .factura-c-c {
   position: absolute;
-  width: 214px;
-  height: 116px;
+  width: 161px;
+  height: 87px;
   top: 1px;
-  left: 602px;
+  left: 451px;
 }
 
-.container .text-wrapper-6 {
+.container .text-wrapper-10 {
   position: absolute;
-  width: 97px;
-  height: 27px;
-  top: 27px;
-  left: 77px;
+  width: 92px;
+  top: 18px;
+  left: 44px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #000000;
-  font-size: 20px;
+  font-size: 18px;
   text-align: right;
   letter-spacing: 0;
   line-height: normal;
+  white-space: nowrap;
 }
 
 .container .checkbox-credito {
-  top: 74px;
+  top: 63px;
   position: absolute;
-  width: 12px;
-  height: 12px;
-  left: 162px;
+  width: 10px;
+  height: 10px;
+  left: 127px;
   background-color: #d9d9d9;
 }
 
 .container .checkbox-contado {
-  top: 57px;
+  top: 48px;
   position: absolute;
-  width: 12px;
-  height: 12px;
-  left: 162px;
+  width: 10px;
+  height: 10px;
+  left: 127px;
   background-color: #d9d9d9;
 }
 
-.container .text-wrapper-7 {
+.container .text-wrapper-11 {
   position: absolute;
-  width: 66px;
-  top: 54px;
-  left: 92px;
+  width: 54px;
+  top: 45px;
+  left: 73px;
   font-family: "Inter", Helvetica;
   font-weight: 400;
   color: #000000;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 0;
   line-height: normal;
 }
 
-.container .text-wrapper-8 {
+.container .text-wrapper-12 {
   position: absolute;
-  width: 60px;
-  top: 71px;
-  left: 98px;
+  width: 47px;
+  top: 60px;
+  left: 79px;
   font-family: "Inter", Helvetica;
   font-weight: 400;
   color: #000000;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 0;
   line-height: normal;
 }
 
 .container .depa-cod-fecha {
   position: absolute;
-  width: 816px;
-  height: 27px;
-  top: 123px;
+  width: 582px;
+  height: 21px;
+  top: 92px;
   left: 1px;
 }
 
@@ -277,11 +345,11 @@ html, body {
   white-space: nowrap;
 }
 
-.container .text-wrapper-9 {
+.container .text-wrapper-13 {
   position: absolute;
   width: 87px;
   top: 3px;
-  left: 367px;
+  left: 281px;
   font-family: "Inter", Helvetica;
   font-weight: 400;
   color: #000000;
@@ -291,11 +359,11 @@ html, body {
   white-space: nowrap;
 }
 
-.container .text-wrapper-10 {
+.container .text-wrapper-14 {
   position: absolute;
-  width: 57px;
+  width: 47px;
   top: 3px;
-  left: 623px;
+  left: 452px;
   font-family: "Inter", Helvetica;
   font-weight: 400;
   color: #000000;
@@ -307,15 +375,15 @@ html, body {
 
 .container .info-cliente {
   position: absolute;
-  width: 816px;
+  width: 611px;
   height: 61px;
-  top: 145px;
+  top: 109px;
   left: 1px;
 }
 
-.container .overlap-group {
+.container .overlap-2 {
   position: relative;
-  width: 738px;
+  width: 532px;
   height: 59px;
   top: 1px;
   left: 39px;
@@ -325,7 +393,7 @@ html, body {
   border-color: #000000;
 }
 
-.container .text-wrapper-11 {
+.container .text-wrapper-15 {
   position: absolute;
   width: 60px;
   top: 3px;
@@ -339,7 +407,7 @@ html, body {
   white-space: nowrap;
 }
 
-.container .text-wrapper-12 {
+.container .text-wrapper-16 {
   position: absolute;
   width: 75px;
   top: 20px;
@@ -353,7 +421,7 @@ html, body {
   white-space: nowrap;
 }
 
-.container .text-wrapper-13 {
+.container .text-wrapper-17 {
   position: absolute;
   width: 72px;
   top: 38px;
@@ -367,25 +435,25 @@ html, body {
   white-space: nowrap;
 }
 
-.container .text-wrapper-14 {
+.container .text-wrapper-18 {
   width: 34px;
   top: 3px;
-  left: 456px;
+  left: 358px;
+  font-size: 12px;
   position: absolute;
   font-family: "Inter", Helvetica;
   font-weight: 400;
   color: #000000;
-  font-size: 12px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
 }
 
-.container .text-wrapper-15 {
+.container .text-wrapper-19 {
   position: absolute;
   width: 71px;
   top: 38px;
-  left: 454px;
+  left: 357px;
   font-family: "Inter", Helvetica;
   font-weight: 400;
   color: #000000;
@@ -397,26 +465,26 @@ html, body {
 
 .container .factura {
   position: absolute;
-  width: 814px;
-  height: 744px;
-  top: 203px;
+  width: 611px;
+  height: 547px;
+  top: 168px;
   left: 0;
 }
 
-.container .overlap-2 {
+.container .overlap-3 {
   position: relative;
-  width: 749px;
-  height: 740px;
+  width: 541px;
+  height: 539px;
   top: 4px;
-  left: 29px;
+  left: 31px;
 }
 
 .container .rectangle {
   position: absolute;
-  width: 736px;
-  height: 740px;
+  width: 530px;
+  height: 539px;
   top: 0;
-  left: 12px;
+  left: 10px;
   background-color: #ffffff;
   border-radius: 10px;
   border: 1px solid;
@@ -425,44 +493,44 @@ html, body {
 
 .container .rec-cuentas {
   position: absolute;
-  width: 644px;
-  height: 26px;
-  top: 688px;
-  left: 12px;
+  width: 464px;
+  height: 19px;
+  top: 489px;
+  left: 10px;
   background-color: #000000;
 }
 
-.container .img {
-  width: 431px;
-  height: 152px;
-  top: 260px;
-  left: 163px;
+.container .nuevo-logo-con-2 {
+  width: 349px;
+  height: 123px;
+  top: 189px;
+  left: 104px;
   position: absolute;
   object-fit: cover;
 }
 
 .container .vector {
   position: absolute;
-  width: 737px;
+  width: 531px;
   height: 22px;
   top: 0;
-  left: 12px;
+  left: 10px;
 }
 
 .container .rectangle-2 {
   position: absolute;
-  width: 65px;
-  height: 65px;
-  top: 638px;
-  left: 591px;
+  width: 47px;
+  height: 47px;
+  top: 453px;
+  left: 427px;
   background-color: #000000;
 }
 
-.container .text-wrapper-16 {
+.container .text-wrapper-20 {
   position: absolute;
-  width: 543px;
-  top: 720px;
-  left: 108px;
+  width: 391px;
+  top: 517px;
+  left: 79px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #000000;
@@ -470,65 +538,65 @@ html, body {
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
+  white-space: nowrap;
 }
 
-.container .text-wrapper-17 {
+.container .text-wrapper-21 {
   position: absolute;
-  width: 67px;
-  top: 670px;
-  left: 576px;
+  width: 48px;
+  top: 475px;
+  left: 419px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #ffffff;
-  font-size: 10px;
+  font-size: 7px;
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
 }
 
-.container .text-wrapper-18 {
+.container .text-wrapper-22 {
   position: absolute;
-  width: 37px;
-  top: 694px;
-  left: 599px;
+  width: 23px;
+  top: 492px;
+  left: 436px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #ffffff;
-  font-size: 10px;
+  font-size: 7px;
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
-  white-space: nowrap;
 }
 
 .container .SUB-TOTAL {
   position: absolute;
-  width: 51px;
-  top: 638px;
-  left: 599px;
+  width: 37px;
+  top: 453px;
+  left: 436px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #ffffff;
-  font-size: 10px;
+  font-size: 7px;
   letter-spacing: 0;
   line-height: normal;
 }
 
 .container .l-cuentas {
   position: absolute;
-  width: 736px;
+  width: 530px;
   height: 1px;
-  top: 714px;
-  left: 12px;
+  top: 507px;
+  left: 10px;
   object-fit: cover;
 }
 
 .container .CUENTAS-BAC-u {
   position: absolute;
-  width: 489px;
-  top: 694px;
-  left: 49px;
+  width: 352px;
+  top: 492px;
+  left: 37px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #ffffff;
@@ -541,18 +609,18 @@ html, body {
 
 .container .l-cuentas-2 {
   position: absolute;
-  width: 736px;
+  width: 530px;
   height: 1px;
-  top: 688px;
-  left: 12px;
+  top: 489px;
+  left: 10px;
   object-fit: cover;
 }
 
 .container .cheque-a-nombre-de {
   position: absolute;
-  width: 539px;
-  top: 670px;
-  left: 24px;
+  width: 388px;
+  top: 473px;
+  left: 19px;
   font-family: "Inter", Helvetica;
   font-weight: 400;
   color: #000000;
@@ -571,50 +639,105 @@ html, body {
   letter-spacing: 0;
 }
 
-.container .text-wrapper-19 {
+.container .text-wrapper-23 {
   font-weight: 700;
 }
 
 .container .l-cheque-a-nom {
   position: absolute;
-  width: 736px;
+  width: 530px;
   height: 1px;
-  top: 664px;
-  left: 12px;
+  top: 471px;
+  left: 10px;
   object-fit: cover;
 }
 
-.container .text-wrapper-20 {
+.container .text-wrapper-24 {
   position: absolute;
-  width: 130px;
-  top: 646px;
-  left: 22px;
+  width: 94px;
+  top: 456px;
+  left: 17px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #000000;
   font-size: 9px;
   letter-spacing: 0;
   line-height: normal;
+  white-space: nowrap;
 }
 
 .container .l-montoletras {
   position: absolute;
-  width: 736px;
+  width: 530px;
   height: 1px;
-  top: 638px;
-  left: 12px;
+  top: 453px;
+  left: 10px;
+  object-fit: cover;
+}
+
+.container .l-iva {
+  position: absolute;
+  width: 1px;
+  height: 488px;
+  top: 20px;
+  left: 472px;
+  object-fit: cover;
+}
+
+.container .l-punit {
+  position: absolute;
+  width: 1px;
+  height: 433px;
+  top: 21px;
+  left: 436px;
+  object-fit: cover;
+}
+
+.container .l-descrp {
+  position: absolute;
+  width: 1px;
+  height: 433px;
+  top: 20px;
+  left: 389px;
+  object-fit: cover;
+}
+
+.container .l-um {
+  position: absolute;
+  width: 1px;
+  height: 433px;
+  top: 21px;
+  left: 140px;
+  object-fit: cover;
+}
+
+.container .l-cod {
+  position: absolute;
+  width: 1px;
+  height: 433px;
+  top: 21px;
+  left: 99px;
+  object-fit: cover;
+}
+
+.container .l-cant {
+  position: absolute;
+  width: 1px;
+  height: 434px;
+  top: 20px;
+  left: 48px;
   object-fit: cover;
 }
 
 .container .th-CANT {
   width: 40px;
-  top: 2px;
-  left: 21px;
+  left: 13px;
   position: absolute;
+  top: 3px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
@@ -622,13 +745,13 @@ html, body {
 
 .container .th-c-DIGO {
   width: 45px;
-  top: 4px;
-  left: 81px;
+  left: 54px;
   position: absolute;
+  top: 3px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
@@ -636,27 +759,27 @@ html, body {
 
 .container .th-u-m {
   width: 25px;
-  top: 4px;
-  left: 142px;
+  left: 110px;
   position: absolute;
+  top: 3px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
 }
 
 .container .th-DESCRIPCI-n {
-  width: 97px;
-  top: 2px;
-  left: 317px;
+  width: 73px;
+  left: 249px;
   position: absolute;
+  top: 3px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
@@ -664,27 +787,27 @@ html, body {
 
 .container .th-p-UNIT {
   width: 40px;
-  top: 2px;
-  left: 502px;
+  left: 396px;
   position: absolute;
+  top: 3px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
 }
 
 .container .th-IVA {
-  width: 27px;
-  top: 2px;
-  left: 599px;
+  width: 19px;
+  left: 447px;
   position: absolute;
+  top: 3px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
@@ -692,122 +815,30 @@ html, body {
 
 .container .th-SUB-TOTAL {
   position: absolute;
-  width: 77px;
+  width: 60px;
   top: 4px;
-  left: 671px;
+  left: 478px;
   font-family: "Inter", Helvetica;
   font-weight: 700;
   color: #ffffff;
-  font-size: 12px;
+  font-size: 10px;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
 }
 
-.container .text-wrapper-21 {
+.container .text-wrapper-25 {
   position: absolute;
-  width: 289px;
-  top: 334px;
-  left: -140px;
+  width: 233px;
+  top: 262px;
+  left: -112px;
   transform: rotate(-90.00deg);
   font-family: "Inter", Helvetica;
   font-weight: 700;
-  color: #000000;
-  font-size: 10px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.container .footer {
-  position: absolute;
-  width: 816px;
-  height: 107px;
-  top: 949px;
-  left: 1px;
-  background-color: transparent;
-}
-
-.container .overlap-group-2 {
-  position: absolute;
-  width: 162px;
-  height: 10px;
-  top: 49px;
-  left: 40px;
-}
-
-.container .text-wrapper-22 {
-  position: absolute;
-  width: 114px;
-  top: 1px;
-  left: 24px;
-  font-family: "Inter", Helvetica;
-  font-weight: 700;
-  color: #000000;
-  font-size: 10px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.container .l-elaborado {
-  position: absolute;
-  width: 162px;
-  height: 2px;
-  top: 0;
-  left: 0;
-}
-
-.container .text-wrapper-23 {
-  position: absolute;
-  width: 55px;
-  top: 50px;
-  left: 668px;
-  font-family: "Inter", Helvetica;
-  font-weight: 700;
-  color: #000000;
-  font-size: 10px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
-  white-space: nowrap;
-}
-
-.container .text-wrapper-24 {
-  position: absolute;
-  width: 132px;
-  top: 73px;
-  left: 342px;
-  font-family: "Inter", Helvetica;
-  font-weight: 600;
   color: #000000;
   font-size: 8px;
   text-align: center;
   letter-spacing: 0;
   line-height: normal;
   white-space: nowrap;
-}
-
-.container .l-sello {
-  position: absolute;
-  width: 162px;
-  height: 2px;
-  top: 48px;
-  left: 614px;
-}
-
-.container .text-wrapper-25 {
-  position: absolute;
-  width: 497px;
-  top: -1px;
-  left: 159px;
-  font-family: "Inter", Helvetica;
-  font-weight: 300;
-  color: #000000;
-  font-size: 7px;
-  text-align: center;
-  letter-spacing: 0;
-  line-height: normal;
 }

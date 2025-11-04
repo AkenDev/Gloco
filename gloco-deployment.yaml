@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: gloco-app
-        image: gcr.io/gloco-446321/gloco-app:v1
+        image: gcr.io/glocoproject-poc/gloco-app:v1
         ports:
         - containerPort: 80
         envFrom:

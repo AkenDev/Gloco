@@ -1,11 +1,13 @@
 # Stage 1: Build Stage
-FROM php:8.1-cli AS build
+FROM php:8.3-cli AS build
 
 # Install system dependencies and PHP extensions
 RUN apt-get update && apt-get install -y \
     libzip-dev curl unzip libpng-dev libonig-dev libxml2-dev \
     build-essential zlib1g-dev libcurl4-openssl-dev pkg-config \
-    && docker-php-ext-install pdo_mysql zip bcmath \
+    libicu-dev git \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install pdo_mysql zip bcmath intl \
     && pecl install redis \
     && docker-php-ext-enable redis
 
@@ -25,6 +27,9 @@ COPY . .
 
 # Install PHP dependencies
 ARG APP_ENV=production
+
+RUN git config --global --add safe.directory /var/www/html
+
 RUN if [ "$APP_ENV" = "production" ]; then \
     composer install --optimize-autoloader --no-dev; \
   else \
@@ -39,16 +44,19 @@ RUN if [ "$APP_ENV" = "production" ]; then \
   fi
 
 # Stage 2: Production Image
-FROM php:8.1-apache
+FROM php:8.3-apache
 
-# Install required extensions
+# Install required extensions (including intl)
+
 RUN apt-get update && apt-get install -y \
     libzip-dev \
-    wkhtmltopdf \
-    && docker-php-ext-install pdo_mysql zip \
+    libicu-dev \
+    && docker-php-ext-configure intl \
+    && docker-php-ext-install pdo_mysql zip intl \
     && pecl install redis \
     && docker-php-ext-enable redis \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 
 # Install Composer in the production stage
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
