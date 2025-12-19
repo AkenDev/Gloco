@@ -5,6 +5,7 @@ on:
     branches:
       - master  # Trigger on every push to main
   workflow_dispatch: # Allows you to run it manually for testing
+  repository_dispatch:
 
 env:
   PROJECT_ID: 'glocoproject-poc' 
