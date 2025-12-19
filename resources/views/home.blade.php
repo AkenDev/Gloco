@@ -5,5 +5,5 @@
 
 @section('content')
     <h1>Bienvenido al sistema Gloco</h1>
-    <p>Este programa está hecho para manejo de Inventario, clientes y creación de Facturas</p>
+    <p>Este programa está hecho para manejo de Inventario, clientes y creación de Facturasssssssss</p>
 @endsection
