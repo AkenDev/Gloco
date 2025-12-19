@@ -41,7 +41,6 @@ jobs:
         token_format: 'access_token'
         workload_identity_provider: ${{ env.WIF_PROVIDER }}
         service_account: ${{ env.WIF_SERVICE_ACCOUNT }}
-        audience: 'https://github.com/AkenDev'
 
     # 3. Log in to Artifact Registry
     - name: Docker Auth
